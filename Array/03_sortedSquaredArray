@@ -1,0 +1,20 @@
+def sortedSquaredArray(array):
+    squareSorted = [None] * len(array)
+    left = 0
+    right = len(array) - 1
+    squareIndex = len(squareSorted) - 1
+
+    while left <= right:
+        if abs(array[left]) > abs(array[right]):
+            squareSorted[squareIndex] = array[left] * array[left]
+            left += 1
+        else:
+            squareSorted[squareIndex] = array[right] * array[right]
+            right -= 1
+        squareIndex -= 1
+    return squareSorted
+
+
+if __name__ == "__main__":
+    array = [1, 2, 3, 5, 6, 8, 9]
+    print(sortedSquaredArray(array))

@@ -1,0 +1,13 @@
+def nonConstructibleChange(coins):
+    coins.sort()
+    currentNonConstuctibleChange = 0
+    for coin in coins:
+        if coin > currentNonConstuctibleChange + 1:
+            break
+        currentNonConstuctibleChange += coin
+    return currentNonConstuctibleChange + 1
+
+
+if __name__ == "__main__":
+    coins = [5, 7, 1, 1, 2, 3, 22]
+    print(nonConstructibleChange(coins))
